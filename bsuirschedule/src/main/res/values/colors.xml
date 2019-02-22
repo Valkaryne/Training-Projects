@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#388E3C</color>
+    <color name="colorPrimaryDark">#1B5E20</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="colorWhite">#E2E2E2</color>
+    <color name="colorBlack">#191919</color>
+    <color name="colorGray">#9E9E9E</color>
+
+    <color name="colorPractice">#303F9F</color>
+    <color name="colorLab">#C2185B</color>
+    <color name="colorLecture">#388E3C</color>
 </resources>

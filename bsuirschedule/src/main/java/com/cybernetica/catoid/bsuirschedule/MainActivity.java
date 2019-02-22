@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button facButton = findViewById(R.id.facButton);
+        /*Button facButton = findViewById(R.id.facButton);
         facButton.setOnClickListener(view -> getFacultiesRequest());
 
         Button specButton = findViewById(R.id.specButton);
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         EditText groupNoEdit = findViewById(R.id.groupNoEdit);
         Button grScButton = findViewById(R.id.grScButton);
-        grScButton.setOnClickListener(view -> getGroupScheduleRequest(groupNoEdit.getText().toString()));
+        grScButton.setOnClickListener(view -> getGroupScheduleRequest(groupNoEdit.getText().toString())); */
 
         mService = BsuirService.retrofit.create(BsuirService.class);
     }
