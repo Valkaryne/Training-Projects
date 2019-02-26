@@ -1,8 +1,15 @@
 package com.cybernetica.catoid.bsuirschedule;
 
+import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -26,6 +33,14 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int LAYOUT = R.layout.activity_main;
+
+    private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private ViewPager viewPager;
+
+    private TabsFragmentAdapter fragmentAdapter;
+
     private final String FAC_TAG = "Faculties";
     private final String SPEC_TAG = "Specialities";
     private final String DEP_TAG = "Departments";
@@ -38,8 +53,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppDefault);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(LAYOUT);
 
         /*Button facButton = findViewById(R.id.facButton);
         facButton.setOnClickListener(view -> getFacultiesRequest());
@@ -65,7 +81,51 @@ public class MainActivity extends AppCompatActivity {
         grScButton.setOnClickListener(view -> getGroupScheduleRequest(groupNoEdit.getText().toString())); */
 
         mService = BsuirService.retrofit.create(BsuirService.class);
+
+        initToolbar();
+        initNavigationView();
+        initTabs();
     }
+
+    private void initToolbar() {
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.app_name);
+        toolbar.setOnMenuItemClickListener(menuItem -> false);
+        toolbar.inflateMenu(R.menu.menu);
+    }
+
+    private void initTabs() {
+        viewPager = findViewById(R.id.viewPager);
+        fragmentAdapter = new TabsFragmentAdapter(getApplicationContext(), getSupportFragmentManager());
+        viewPager.setAdapter(fragmentAdapter);
+
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
+    private void initNavigationView() {
+        drawerLayout = findViewById(R.id.drawer_layout);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,
+                toolbar, R.string.view_navigation_open, R.string.view_navigation_close);
+        drawerLayout.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = findViewById(R.id.navigation);
+        navigationView.setNavigationItemSelectedListener(menuItem -> {
+            drawerLayout.closeDrawers();
+            switch (menuItem.getItemId()) {
+                case R.id.actionNotificationItem:
+                    showNotificationTab();
+            }
+            return true;
+        });
+    }
+
+    private void showNotificationTab() {
+        viewPager.setCurrentItem(1);
+    }
+
 
     private void getFacultiesRequest() {
         final Call<List<Faculty>> call = mService.getFaculties();
