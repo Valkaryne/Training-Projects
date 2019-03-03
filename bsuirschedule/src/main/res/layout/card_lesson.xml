@@ -5,8 +5,9 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:layout_margin="5dp"
-    app:cardCornerRadius="10dp">
+    android:layout_margin="0dp"
+    app:cardUseCompatPadding="false"
+    app:cardElevation="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,14 +15,13 @@
         android:orientation="horizontal">
         <TextView
             android:id="@+id/card_lessonType"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_margin="5dp"
-            android:background="@drawable/lesson_bg_lecture"
             android:gravity="center"
-            android:text="ЛК"
+            android:text=""
             android:textColor="@color/colorWhite"
-            android:textSize="30sp"/>
+            android:textSize="24sp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -31,7 +31,7 @@
                 android:id="@+id/card_subject"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="АСД"
+                android:text=""
                 android:textSize="16sp"
                 android:textColor="@color/colorBlack"
                 android:layout_marginStart="5dp"
@@ -40,7 +40,7 @@
                 android:id="@+id/card_interactor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Бильдюк Д.М."
+                android:text=""
                 android:textSize="14sp"
                 android:textColor="@color/colorGray"
                 android:layout_marginStart="5dp"
@@ -49,7 +49,7 @@
                 android:id="@+id/card_auditory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="339-1"
+                android:text=""
                 android:textSize="14sp"
                 android:textColor="@color/colorGray"
                 android:layout_marginStart="5dp"
@@ -64,7 +64,7 @@
                 android:id="@+id/card_startLesson"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="15:20"
+                android:text=""
                 android:textSize="16sp"
                 android:textColor="@color/colorBlack"
                 android:layout_marginStart="10dp"
@@ -73,7 +73,7 @@
                 android:id="@+id/card_endLesson"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="16:55"
+                android:text=""
                 android:textSize="16sp"
                 android:textColor="@color/colorBlack"
                 android:layout_marginStart="10dp"/>

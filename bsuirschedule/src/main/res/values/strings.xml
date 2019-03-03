@@ -13,6 +13,15 @@
         Завтра нет занятий.\nПриятного дня!
     </string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_lessons_week">
+        На этой неделе нет занятий
+    </string>
+
+    <string name="lecture_type">ЛК</string>
+    <string name="practice_type">ПЗ</string>
+    <string name="lab_type">ЛР</string>
+
+    <string name="title_today">Сегодня</string>
+    <string name="title_tomorrow">Завтра</string>
+    <string name="title_week">Неделя</string>
 </resources>

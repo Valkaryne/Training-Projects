@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EmptyTabFragment">
+
+    <TextView
+        android:id="@+id/noLessonsTv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/no_lessons_today"
+        android:gravity="center"/>
+</LinearLayout>

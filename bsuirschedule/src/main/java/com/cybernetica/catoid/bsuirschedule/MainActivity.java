@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         initTabs();
     }
 
+
     private void initToolbar() {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
